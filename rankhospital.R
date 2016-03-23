@@ -25,7 +25,7 @@ rankhospital <- function(state, outcome, num = "best") {
         data_clean <- data_state[filtered,]
         data_sorted<-data_clean[order(data_clean[,colnum],data_clean$Hospital.Name),]
         
-        if(num=="best"){mum<-1}
+        if(num=="best"){num<-1}
         else if(num=="worst"){num<- nrow(data_clean)}
         else if(num>nrow(data_sorted)){stop("NA")}
         return(data_sorted$Hospital.Name[num])
